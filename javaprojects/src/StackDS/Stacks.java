@@ -1,15 +1,15 @@
 package StackDS;
 
 public class Stacks {
-	public ListNode head;
-	private ListNode top;
+	public Node head;
+	private Node top;
 	private int length;
 	
-		private class ListNode {
+		private class Node {
 			private int data;
-			private ListNode next;
+			private Node next;
 	
-public ListNode(int data) {
+public Node(int data) {
 	this.data=data;
 	next=null;
 }
@@ -26,7 +26,7 @@ public boolean isEmpty() {
 						// implement puch() , pop() , peek()
 
 public void push(int data) {
-	ListNode newnode=new ListNode(data);
+	Node newnode=new Node(data);
 	if(isEmpty()) {
 		head=newnode;
 	}
@@ -55,12 +55,12 @@ public int peek() {
 }
 
 
-public ListNode middle() {
+public Node middle() {
 	if(isEmpty()) {
 		return null;
 	}
-	ListNode slowptr=head;
-	ListNode fastptr=head;
+	Node slowptr=head;
+	Node fastptr=head;
 	while(fastptr!=null && fastptr.next!=null) {
 		slowptr=slowptr.next;
 		fastptr=fastptr.next.next;
@@ -108,7 +108,7 @@ public ListNode middle() {
 	System.out.println(st.pop());
 	System.out.println(st.peek());	
 	
-	ListNode mdl = st.middle();
+	Node mdl = st.middle();
 		System.out.println(mdl.data);
 		System.out.println(st.middle().data);
 		
