@@ -1,12 +1,13 @@
 package Circular_LinkedList;
 
 public class CircularLinkedList {
-	private ListNode last;
-	private int length;
+	ListNode head;
+	 ListNode tail;
+	 int length;
 	
 private class ListNode{
-	private int data;
-	private ListNode next;
+	 int data;
+	 ListNode next;
 	
 public ListNode(int data) {
 	this.data=data;
@@ -14,7 +15,7 @@ public ListNode(int data) {
 		}
 	}
 public CircularLinkedList() {
-	last=null;
+	tail=null;
 	length=0;
 }
 

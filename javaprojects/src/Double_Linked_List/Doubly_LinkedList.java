@@ -59,7 +59,7 @@ public void insertnode(int value) {
 //To delete the node at the First of dll-------->
 public ListNode deletefirst() {
 	if(isEmpty()) {
-		return;
+		return null;
 	}
 	ListNode temp=head;
 	if(head==tail) {

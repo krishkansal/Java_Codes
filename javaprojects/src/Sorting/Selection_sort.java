@@ -1,48 +1,42 @@
 package Sorting;
 
-import java.util.Scanner;
-
 public class Selection_sort {
 	
 	
 	 public static void selectionSort(int[] arr){  
-	        for (int i = 0; i < arr.length - 1; i++)  
+	        for (int j=0;j<arr.length-1;j++)  
 	        {  
-	            int index = i;  
-	            for (int j = i + 1; j < arr.length; j++){  
-	                if (arr[j] < arr[index]){  
-	                    index = j; 
+	            int minimumIndex=j;  
+	            for (int i=j+1;i<arr.length;i++){  
+	                if(arr[i]<arr[minimumIndex]){  
+	                    minimumIndex=i; 
 	                }  
 	            }  
-	            int smallerNumber = arr[index];   
-	            arr[index] = arr[i];  
-	            arr[i] = smallerNumber;  
-	        }  
-	    }  
+	            if(minimumIndex!=j) {
+	            	int temp=arr[j];
+	            	arr[j]=arr[minimumIndex];
+	            	arr[minimumIndex]=temp;
+	            }  
+	        }
+	 }
+
+		void print(int arr[]) {
+			int n=arr.length;
+			for(int i=0;i<n;i++) {
+				System.out.print(arr[i]+" ");
+			}
+			System.out.println();
+		}
+
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in); 
-		 int n=sc.nextInt();  
-		 int[] arr1 =new int [n];
-		 for(int i=0; i<n; i++)  
-		 {  
-		 //reading array elements from the user   
-		 arr1[i]=sc.nextInt();  
-		 }  
-		   
-	        System.out.println("Before Selection Sort");  
-	        for(int i:arr1){  
-	            System.out.print(i+" ");  
-	        }  
-	        System.out.println();  
-	          
-	        selectionSort(arr1);
-	         
-	        System.out.println("After Selection Sort");  
-	        for(int i:arr1){  
-	            System.out.print(i+" ");  
-	        }  
-
+		Selection_sort ss = new Selection_sort();
+		 int a [] = {5,7,4,9,1};
+		 
+		 ss.print(a);
+		 ss.selectionSort(a);
+		 ss.print(a);
+		 
 		
 	}
 

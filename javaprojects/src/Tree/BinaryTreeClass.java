@@ -3,8 +3,8 @@ package Tree;
 class node
 {
 	int data;
-	Node left;
-	Node right;
+	node left;
+	node right;
 	node(int data)
 	{
 		this.data = data;
@@ -16,19 +16,26 @@ class node
 
 public class BinaryTreeClass {
 	
-	Node root;
-	private Node addElement(Node newnode, int data)
+	node root;
+	
+	BinaryTreeClass(){
+		root=null;
+	}
+	
+	
+	public node addElement(node root, int data)
 	{
-		if(newnode == null)
-			return new Node(data);
-		if(data <newnode.data)
-			newnode.left = addElement(newnode.left, data);
-		else if(data > newnode.data)
-			newnode.right = addElement(newnode.right, data);
+		if(root == null) {
+			root=new node(data);
+		}
+		else if(data <root.data)
+			root.left = addElement(root.left, data);
+		else if(data > root.data)
+			root.right = addElement(root.right, data);
 		else 
-			return newnode;
+			return root;
 		
-		return newnode;
+		return root;
 	}
 	public void add(int data)
 	{
